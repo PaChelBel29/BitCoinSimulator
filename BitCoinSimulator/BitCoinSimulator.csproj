@@ -6,4 +6,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Asset_Of_Frame\" />
+  </ItemGroup>
+
 </Project>
