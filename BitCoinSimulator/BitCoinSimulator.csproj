@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Asset_Of_Frame\" />
+    <Folder Include="Function\" />
   </ItemGroup>
 
 </Project>

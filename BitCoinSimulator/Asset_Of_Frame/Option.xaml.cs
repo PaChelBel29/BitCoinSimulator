@@ -11,26 +11,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BitCoinSimulator.Function
+namespace BitCoinSimulator.Asset_Of_Frame
 {
     /// <summary>
-    /// StartPage.xaml에 대한 상호 작용 논리
+    /// Option.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class StartPage : Page
+    public partial class Option : UserControl
     {
-        public StartPage()
+        public Option()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void StartButton_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
