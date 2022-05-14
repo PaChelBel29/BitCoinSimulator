@@ -5,9 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BitCoinSimulator"
         xmlns:AFrame="clr-namespace:BitCoinSimulator.Asset_Of_Frame"
+
         mc:Ignorable="d"
         Title="BitCoinSimulator ~비트코인으로 인생역전!~" Height="768" Width="1024">
     <Grid>
         <AFrame:Start x:Name="start"/>
+        <AFrame:Option x:Name="s_Option"/>
     </Grid>
 </Window>

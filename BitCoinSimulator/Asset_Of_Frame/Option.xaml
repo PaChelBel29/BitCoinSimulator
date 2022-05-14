@@ -6,19 +6,23 @@
              xmlns:local="clr-namespace:BitCoinSimulator.Asset_Of_Frame"
              mc:Ignorable="d" 
              d:DesignHeight="768" d:DesignWidth="1024">
-    <Grid>
+    <Grid Style="{StaticResource green_back}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <Grid Height="20"></Grid>
+            <Button  Content="←" FontSize="30" Width="50"  Style="{StaticResource Round_button}"/>
+        </StackPanel>
         <StackPanel Grid.Column="1">
             <Grid Height="30"></Grid>
             <TextBlock Text="Sound" HorizontalAlignment="Center" FontSize="30">
             </TextBlock>
             <Grid Height="30"></Grid>
-            <Button Content="Save" Command="" FontSize=" 30 " Width="160"/>
+            <Button Content="Save" Command="" FontSize=" 30 " Width="160" Style="{StaticResource Round_button}"/>
         </StackPanel>
         <StackPanel Grid.Column="2">
             <Grid Height="45"></Grid>

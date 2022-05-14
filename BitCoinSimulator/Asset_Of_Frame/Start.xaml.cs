@@ -22,5 +22,7 @@ namespace BitCoinSimulator.Asset_Of_Frame
         {
             InitializeComponent();
         }
+
+      
     }
 }

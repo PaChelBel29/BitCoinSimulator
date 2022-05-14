@@ -2,11 +2,11 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:BitCoinSimulator.Asset_Of_Frame"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:BitCoinSimulator.Asset_Of_Frame" 
              mc:Ignorable="d" 
              d:DesignHeight="768" d:DesignWidth="1024">
-    <Grid>
+    <Grid Style="{StaticResource green_back}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
@@ -19,9 +19,10 @@
             <RowDefinition></RowDefinition>
             <RowDefinition Height="2*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Label Content="BitCoinSimulator" x:Name="s_Title" Grid.Row="0" Grid.Column=" 0 " Grid.ColumnSpan="3" FontSize="60" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <Button Content="Start" Grid.Column="1" Grid.Row="1" FontSize="30" Margin=" 5" x:Name="StartButton"/>
-        <Button Content="Option" Grid.Column="1" Grid.Row="2" FontSize="30" Margin=" 5" x:Name="OptionButton" />
-        <Button Content="Exit" Grid.Column="1" Grid.Row="3" FontSize="30" Margin=" 5" x:Name="ExitButton" />
+        <Image Source="/Resources/Title.PNG" Width="600" Grid.Column="0" Grid.ColumnSpan="3"/>
+        <Button Content="Start" Grid.Column="1" Grid.Row="1" FontSize="30" Margin=" 5" x:Name="StartButton" Style="{StaticResource Round_button}"/>
+        <Button Content="Option" Grid.Column="1" Grid.Row="2" FontSize="30" Margin=" 5" x:Name="OptionButton" Style="{StaticResource Round_button}"/>
+        <Button Content="Exit" Grid.Column="1" Grid.Row="3" FontSize="30" Margin=" 5" x:Name="ExitButton" Style="{StaticResource Round_button}"/>
+        <Image Grid.ColumnSpan="2" Grid.Column="1" Margin="112,135,-1640,-169" Stretch="Fill" Grid.Row="4"/>
     </Grid>
 </UserControl>
