@@ -1,0 +1,63 @@
+﻿<Window x:Class="BITCOIN_SIMULATOR_TAB_.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BITCOIN_SIMULATOR_TAB_"
+        xmlns:mycls="clr-namespace:BITCOIN_SIMULATOR_TAB_.Classes"
+        mc:Ignorable="d"
+        Title="BITCOIN SIMULATOR" Height="768" Width="1024"
+        WindowStartupLocation="CenterScreen">
+
+
+    <mycls:MyGrid x:Name="myGrid" aboutBackground="{Binding ElementName=TabCtrl, Path=SelectedItem}">
+
+        <Border x:Name="myBorder" 
+                Padding="30"
+                Background="{DynamicResource borCol}"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center">
+
+            <TabControl x:Name="TabCtrl"
+                        Height="600"
+                        Width="800"
+                        BorderBrush="Transparent"
+                        Background="{Binding ElementName=myGrid, Path=Background}">
+
+                <TabItem x:Name="Tab1"
+                         Header="현재 자산"
+                         Style="{DynamicResource TabItemStyle}">
+                    
+                </TabItem>
+
+                <TabItem x:Name="Tab2" 
+                         Header="코인 시세" 
+                         Style="{DynamicResource TabItemStyle}">
+
+                </TabItem>
+
+                <TabItem x:Name="Tab3" 
+                         Header="코인 매매" 
+                         Style="{DynamicResource TabItemStyle}">
+
+                </TabItem>
+
+                <TabItem x:Name="Tab4" 
+                         Header="보유 코인" 
+                         Style="{DynamicResource TabItemStyle}">
+
+                </TabItem>
+
+                <TabItem x:Name="Tab5" 
+                         Header="옵션" 
+                         Style="{DynamicResource TabItemStyle}">
+
+                </TabItem>
+
+            </TabControl>
+            
+        </Border>
+        
+    </mycls:MyGrid>
+</Window>
+
