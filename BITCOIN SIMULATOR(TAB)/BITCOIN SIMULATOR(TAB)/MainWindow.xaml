@@ -10,7 +10,7 @@
         WindowStartupLocation="CenterScreen">
 
 
-    <mycls:MyGrid x:Name="myGrid" aboutBackground="{Binding ElementName=TabCtrl, Path=SelectedItem}">
+    <mycls:TabGrid x:Name="myGrid" aboutBackground="{Binding ElementName=TabCtrl, Path=SelectedItem}">
 
         <Border x:Name="myBorder" 
                 Padding="30"
@@ -58,6 +58,6 @@
             
         </Border>
         
-    </mycls:MyGrid>
+    </mycls:TabGrid>
 </Window>
 
