@@ -7,6 +7,7 @@
         xmlns:mycls="clr-namespace:BITCOIN_SIMULATOR_TAB_.Classes"
         mc:Ignorable="d"
         Title="BITCOIN SIMULATOR" Height="768" Width="1024"
+        
         WindowStartupLocation="CenterScreen">
 
 
