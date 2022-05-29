@@ -1,0 +1,35 @@
+﻿<Page x:Class="BitCoinSimulator.View.Tutorial_Page_3"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:cmd="clr-namespace:BitCoinSimulator.ViewModel.Commands"
+      xmlns:local="clr-namespace:BitCoinSimulator.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" d:DesignWidth="1024"
+      Title="Tutorial_Page">
+    <!--201911907 CSE Div. 조훈희-->
+    <Page.Resources>
+        <cmd:Page_3_To_Game_Command x:Key="3ToG"/>
+    </Page.Resources>
+    <Grid x:Name="tutorial_back">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/Scene3.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=" 4*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button x:Name="Tutorial_Chat" 
+                   Grid.Row="1" 
+                   Margin="15" 
+                   Style="{StaticResource TutorialText}"
+                   Command="{Binding Source={ StaticResource 3ToG}}"
+                   Content="아직 죽을 수 없었네요 어떤 수상한 사람이 와서 당신에게 말합니다.
+                   &#10;&quot;안녕하세요~ 당신은 지금 우리한테 구출당했어요&quot;
+                   &#10;&quot;여기는 우리 아지트 지하구요 돈 상환 전까지는 못나가세요~ 1억을 드릴테니 한 달안에 갚으세요!&quot;"
+                   >
+        </Button>
+
+    </Grid>
+</Page>
