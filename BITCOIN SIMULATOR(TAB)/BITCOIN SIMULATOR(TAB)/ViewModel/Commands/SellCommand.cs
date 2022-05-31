@@ -43,7 +43,15 @@ namespace BITCOIN_SIMULATOR_TAB_.ViewModel.Commands
                         UserVM.Usr.Btc -= value;
                         UserVM.Usr.TotalCoin -= value;
                         UserVM.Usr.UserCoin -= value;
-                        UserVM.Usr.PfRate = (UserVM.Usr.PfCoin - UserVM.Usr.TotalCoin) / UserVM.Usr.TotalCoin;
+
+                        if(UserVM.Usr.TotalCoin != 0)
+                        {
+                            UserVM.Usr.PfRate = (UserVM.Usr.PfCoin - UserVM.Usr.TotalCoin) / UserVM.Usr.TotalCoin;
+                        }
+                        else
+                        {
+                            UserVM.Usr.PfRate = 0;
+                        }
                     }
                     else if (value == UserVM.Usr.Btc)
                     {
@@ -55,7 +63,15 @@ namespace BITCOIN_SIMULATOR_TAB_.ViewModel.Commands
                         UserVM.Usr.BtcRate = 0;
                         UserVM.Usr.TotalCoin -= value;
                         UserVM.Usr.UserCoin = 0;
-                        UserVM.Usr.PfRate = (UserVM.Usr.PfCoin - UserVM.Usr.TotalCoin) / UserVM.Usr.TotalCoin;
+
+                        if (UserVM.Usr.TotalCoin != 0)
+                        {
+                            UserVM.Usr.PfRate = (UserVM.Usr.PfCoin - UserVM.Usr.TotalCoin) / UserVM.Usr.TotalCoin;
+                        }
+                        else
+                        {
+                            UserVM.Usr.PfRate = 0;
+                        }
                     }
                     else
                     {
@@ -72,9 +88,16 @@ namespace BITCOIN_SIMULATOR_TAB_.ViewModel.Commands
                         UserVM.Usr.PfCoin -= value + (UserVM.Usr.EthRate * value);
                         UserVM.Usr.Eth -= value;
                         UserVM.Usr.TotalCoin -= value;
-                        UserVM.Usr.UserMoney += value;
                         UserVM.Usr.UserCoin -= value;
-                        UserVM.Usr.PfRate = (UserVM.Usr.PfCoin - UserVM.Usr.TotalCoin) / UserVM.Usr.TotalCoin;
+
+                        if (UserVM.Usr.TotalCoin != 0)
+                        {
+                            UserVM.Usr.PfRate = (UserVM.Usr.PfCoin - UserVM.Usr.TotalCoin) / UserVM.Usr.TotalCoin;
+                        }
+                        else
+                        {
+                            UserVM.Usr.PfRate = 0;
+                        }
                     }
                     else if (value == UserVM.Usr.Eth)
                     {
@@ -85,9 +108,16 @@ namespace BITCOIN_SIMULATOR_TAB_.ViewModel.Commands
                         UserVM.Usr.EthPrice = 0;
                         UserVM.Usr.EthRate = 0;
                         UserVM.Usr.TotalCoin -= value;
-                        UserVM.Usr.UserMoney += value;
                         UserVM.Usr.UserCoin = 0;
-                        UserVM.Usr.PfRate = (UserVM.Usr.PfCoin - UserVM.Usr.TotalCoin) / UserVM.Usr.TotalCoin;
+
+                        if (UserVM.Usr.TotalCoin != 0)
+                        {
+                            UserVM.Usr.PfRate = (UserVM.Usr.PfCoin - UserVM.Usr.TotalCoin) / UserVM.Usr.TotalCoin;
+                        }
+                        else
+                        {
+                            UserVM.Usr.PfRate = 0;
+                        }
                     }
                     else
                     {
@@ -104,9 +134,16 @@ namespace BITCOIN_SIMULATOR_TAB_.ViewModel.Commands
                         UserVM.Usr.PfCoin -= value + (UserVM.Usr.XrpRate * value);
                         UserVM.Usr.Xrp -= value;
                         UserVM.Usr.TotalCoin -= value;
-                        UserVM.Usr.UserMoney += value;
                         UserVM.Usr.UserCoin -= value;
-                        UserVM.Usr.PfRate = (UserVM.Usr.PfCoin - UserVM.Usr.TotalCoin) / UserVM.Usr.TotalCoin;
+
+                        if (UserVM.Usr.TotalCoin != 0)
+                        {
+                            UserVM.Usr.PfRate = (UserVM.Usr.PfCoin - UserVM.Usr.TotalCoin) / UserVM.Usr.TotalCoin;
+                        }
+                        else
+                        {
+                            UserVM.Usr.PfRate = 0;
+                        }
                     }
                     else if (value == UserVM.Usr.Xrp)
                     {
@@ -117,9 +154,16 @@ namespace BITCOIN_SIMULATOR_TAB_.ViewModel.Commands
                         UserVM.Usr.XrpPrice = 0;
                         UserVM.Usr.XrpRate = 0;
                         UserVM.Usr.TotalCoin -= value;
-                        UserVM.Usr.UserMoney += value;
                         UserVM.Usr.UserCoin = 0;
-                        UserVM.Usr.PfRate = (UserVM.Usr.PfCoin - UserVM.Usr.TotalCoin) / UserVM.Usr.TotalCoin;
+
+                        if (UserVM.Usr.TotalCoin != 0)
+                        {
+                            UserVM.Usr.PfRate = (UserVM.Usr.PfCoin - UserVM.Usr.TotalCoin) / UserVM.Usr.TotalCoin;
+                        }
+                        else
+                        {
+                            UserVM.Usr.PfRate = 0;
+                        }
                     }
                     else
                     {
@@ -136,9 +180,16 @@ namespace BITCOIN_SIMULATOR_TAB_.ViewModel.Commands
                         UserVM.Usr.PfCoin -= value + (UserVM.Usr.DotRate * value);
                         UserVM.Usr.Dot -= value;
                         UserVM.Usr.TotalCoin -= value;
-                        UserVM.Usr.UserMoney += value;
                         UserVM.Usr.UserCoin -= value;
-                        UserVM.Usr.PfRate = (UserVM.Usr.PfCoin - UserVM.Usr.TotalCoin) / UserVM.Usr.TotalCoin;
+
+                        if (UserVM.Usr.TotalCoin != 0)
+                        {
+                            UserVM.Usr.PfRate = (UserVM.Usr.PfCoin - UserVM.Usr.TotalCoin) / UserVM.Usr.TotalCoin;
+                        }
+                        else
+                        {
+                            UserVM.Usr.PfRate = 0;
+                        }
                     }
                     else if (value == UserVM.Usr.Dot)
                     {
@@ -149,9 +200,16 @@ namespace BITCOIN_SIMULATOR_TAB_.ViewModel.Commands
                         UserVM.Usr.DotPrice = 0;
                         UserVM.Usr.DotRate = 0;
                         UserVM.Usr.TotalCoin -= value;
-                        UserVM.Usr.UserMoney += value;
                         UserVM.Usr.UserCoin = 0;
-                        UserVM.Usr.PfRate = (UserVM.Usr.PfCoin - UserVM.Usr.TotalCoin) / UserVM.Usr.TotalCoin;
+
+                        if (UserVM.Usr.TotalCoin != 0)
+                        {
+                            UserVM.Usr.PfRate = (UserVM.Usr.PfCoin - UserVM.Usr.TotalCoin) / UserVM.Usr.TotalCoin;
+                        }
+                        else
+                        {
+                            UserVM.Usr.PfRate = 0;
+                        }
                     }
                     else
                     {
@@ -168,9 +226,16 @@ namespace BITCOIN_SIMULATOR_TAB_.ViewModel.Commands
                         UserVM.Usr.PfCoin -= value + (UserVM.Usr.DogeRate * value);
                         UserVM.Usr.Doge -= value;
                         UserVM.Usr.TotalCoin -= value;
-                        UserVM.Usr.UserMoney += value;
                         UserVM.Usr.UserCoin -= value;
-                        UserVM.Usr.PfRate = (UserVM.Usr.PfCoin - UserVM.Usr.TotalCoin) / UserVM.Usr.TotalCoin;
+
+                        if (UserVM.Usr.TotalCoin != 0)
+                        {
+                            UserVM.Usr.PfRate = (UserVM.Usr.PfCoin - UserVM.Usr.TotalCoin) / UserVM.Usr.TotalCoin;
+                        }
+                        else
+                        {
+                            UserVM.Usr.PfRate = 0;
+                        }
                     }
                     else if (value == UserVM.Usr.Doge)
                     {
@@ -181,9 +246,16 @@ namespace BITCOIN_SIMULATOR_TAB_.ViewModel.Commands
                         UserVM.Usr.DogePrice = 0;
                         UserVM.Usr.DogeRate = 0;
                         UserVM.Usr.TotalCoin -= value;
-                        UserVM.Usr.UserMoney += value;
                         UserVM.Usr.UserCoin = 0;
-                        UserVM.Usr.PfRate = (UserVM.Usr.PfCoin - UserVM.Usr.TotalCoin) / UserVM.Usr.TotalCoin;
+
+                        if (UserVM.Usr.TotalCoin != 0)
+                        {
+                            UserVM.Usr.PfRate = (UserVM.Usr.PfCoin - UserVM.Usr.TotalCoin) / UserVM.Usr.TotalCoin;
+                        }
+                        else
+                        {
+                            UserVM.Usr.PfRate = 0;
+                        }
                     }
                     else
                     {
