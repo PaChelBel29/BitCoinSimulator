@@ -7,9 +7,9 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace BITCOIN_SIMULATOR_TAB_.Classes
+namespace BITCOIN_SIMULATOR_TAB_.Model
 {
-    class TabGrid : Grid
+    class TapGrid : Grid
     {
 
         public object aboutBackground
@@ -20,12 +20,12 @@ namespace BITCOIN_SIMULATOR_TAB_.Classes
 
         // Using a DependencyProperty as the backing store for aboutBackground.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty aboutBackgroundProperty =
-            DependencyProperty.Register("aboutBackground", typeof(object), typeof(TabGrid), 
+            DependencyProperty.Register("aboutBackground", typeof(object), typeof(TapGrid), 
                 new PropertyMetadata(false, OnIsBackgroundChanged));
 
         private static void OnIsBackgroundChanged (DependencyObject source, DependencyPropertyChangedEventArgs e)
         {
-            TabGrid myGrid = (TabGrid) source;
+            TapGrid myGrid = (TapGrid) source;
 
             TabItem tabItem = myGrid.aboutBackground as TabItem;
 
