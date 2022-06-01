@@ -1,0 +1,31 @@
+﻿<Window x:Class="BITCOIN_SIMULATOR_TAB_.View.Start"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BITCOIN_SIMULATOR_TAB_.View"
+        xmlns:cmd="clr-namespace:BITCOIN_SIMULATOR_TAB_.ViewModel.Commands"
+        mc:Ignorable="d"
+       Title="BCS" Height="768" Width="1024">
+    <!--201911907 CSE Div. 조훈희-->
+    <Window.Resources>
+        <cmd:StartCommand x:Key="start"/>
+        <cmd:ExitCommand x:Key="exit"/>
+    </Window.Resources>
+    <Grid Style="{StaticResource green_back}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Image Source="/Resources/Title.png" Width="600" Grid.Column="0" Grid.ColumnSpan="3"/>
+        <Button Content="Start" Grid.Column="1" Grid.Row="1" FontSize="30" Margin=" 5" x:Name="StartButton" Style="{StaticResource Round_button}" Command="{Binding Source={StaticResource start}}"/>
+        <Button Content="Exit" Grid.Column="1" Grid.Row="2" FontSize="30" Margin=" 5" x:Name="ExitButton" Style="{StaticResource Round_button}" Command="{Binding Source={StaticResource exit}}"/>
+    </Grid>
+</Window>

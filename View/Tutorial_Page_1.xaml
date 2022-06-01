@@ -1,0 +1,35 @@
+﻿<Page x:Class="BITCOIN_SIMULATOR_TAB_.View.Tutorial_Page_1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BITCOIN_SIMULATOR_TAB_.View"
+      xmlns:TEB="clr-namespace:BITCOIN_SIMULATOR_TAB_.ViewModel.UserControls"
+      xmlns:cmd="clr-namespace:BITCOIN_SIMULATOR_TAB_.ViewModel.Commands"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" d:DesignWidth="1024"
+      Title="Tutorial_Page_1">
+    <!--201911907 CSE Div. 조훈희-->
+    <Page.Resources>
+        <cmd:Page_1_To_2_Command x:Key="1to2"/>
+    </Page.Resources>
+    <Grid x:Name="tutorial_back">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/Scene1.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=" 4*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TEB:TypingEffectButton x:Name="Tutorial_Chat"
+               Grid.Row="1" 
+               Margin="15" 
+               Style="{StaticResource TutorialText}"
+               Command="{Binding Source={StaticResource 1to2}}"
+               HorizontalContentAlignment="Left"
+               script="당신은 군대에서 선임이 알려준 비트코인을 하다가 월급은 물론이고 사회에서 벌었던 돈까지 탕진했습니다.
+                       &#10;&#10;&#10; [이 스크립트 박스를 눌러 계속 진행하세요.]"
+               >
+        </TEB:TypingEffectButton>
+    </Grid>
+</Page>
