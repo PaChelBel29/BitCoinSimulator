@@ -1,0 +1,30 @@
+C:\Users\조훈희\Desktop\Files On Campus\조훈희\전북대\컴공 전공\윈도우 프로그래밍\Project\BitCoinSimulator-addTab\BitCoinSimulator-addTab\BITCOIN SIMULATOR(TAB)\BITCOIN SIMULATOR(TAB)\obj\Debug\BITCOIN SIMULATOR(TAB).csprojAssemblyReference.cache
+C:\Users\조훈희\Desktop\Files On Campus\조훈희\전북대\컴공 전공\윈도우 프로그래밍\Project\BitCoinSimulator-addTab\BitCoinSimulator-addTab\BITCOIN SIMULATOR(TAB)\BITCOIN SIMULATOR(TAB)\obj\Debug\App.baml
+C:\Users\조훈희\Desktop\Files On Campus\조훈희\전북대\컴공 전공\윈도우 프로그래밍\Project\BitCoinSimulator-addTab\BitCoinSimulator-addTab\BITCOIN SIMULATOR(TAB)\BITCOIN SIMULATOR(TAB)\obj\Debug\View\SetNamePage.g.cs
+C:\Users\조훈희\Desktop\Files On Campus\조훈희\전북대\컴공 전공\윈도우 프로그래밍\Project\BitCoinSimulator-addTab\BitCoinSimulator-addTab\BITCOIN SIMULATOR(TAB)\BITCOIN SIMULATOR(TAB)\obj\Debug\View\TabWindow.g.cs
+C:\Users\조훈희\Desktop\Files On Campus\조훈희\전북대\컴공 전공\윈도우 프로그래밍\Project\BitCoinSimulator-addTab\BitCoinSimulator-addTab\BITCOIN SIMULATOR(TAB)\BITCOIN SIMULATOR(TAB)\obj\Debug\App.g.cs
+C:\Users\조훈희\Desktop\Files On Campus\조훈희\전북대\컴공 전공\윈도우 프로그래밍\Project\BitCoinSimulator-addTab\BitCoinSimulator-addTab\BITCOIN SIMULATOR(TAB)\BITCOIN SIMULATOR(TAB)\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\조훈희\Desktop\Files On Campus\조훈희\전북대\컴공 전공\윈도우 프로그래밍\Project\BitCoinSimulator-addTab\BitCoinSimulator-addTab\BITCOIN SIMULATOR(TAB)\BITCOIN SIMULATOR(TAB)\obj\Debug\BITCOIN SIMULATOR(TAB)_MarkupCompile.cache
+C:\Users\조훈희\Desktop\Files On Campus\조훈희\전북대\컴공 전공\윈도우 프로그래밍\Project\BitCoinSimulator-addTab\BitCoinSimulator-addTab\BITCOIN SIMULATOR(TAB)\BITCOIN SIMULATOR(TAB)\obj\Debug\BITCOIN SIMULATOR(TAB)_MarkupCompile.lref
+C:\Users\조훈희\Desktop\Files On Campus\조훈희\전북대\컴공 전공\윈도우 프로그래밍\Project\BitCoinSimulator-addTab\BitCoinSimulator-addTab\BITCOIN SIMULATOR(TAB)\BITCOIN SIMULATOR(TAB)\obj\Debug\View\Start.g.cs
+C:\Users\조훈희\Desktop\Files On Campus\조훈희\전북대\컴공 전공\윈도우 프로그래밍\Project\BitCoinSimulator-addTab\BitCoinSimulator-addTab\BITCOIN SIMULATOR(TAB)\BITCOIN SIMULATOR(TAB)\obj\Debug\View\Tutorial_Page_1.g.cs
+C:\Users\조훈희\Desktop\Files On Campus\조훈희\전북대\컴공 전공\윈도우 프로그래밍\Project\BitCoinSimulator-addTab\BitCoinSimulator-addTab\BITCOIN SIMULATOR(TAB)\BITCOIN SIMULATOR(TAB)\bin\Debug\BITCOIN SIMULATOR(TAB).exe.config
+C:\Users\조훈희\Desktop\Files On Campus\조훈희\전북대\컴공 전공\윈도우 프로그래밍\Project\BitCoinSimulator-addTab\BitCoinSimulator-addTab\BITCOIN SIMULATOR(TAB)\BITCOIN SIMULATOR(TAB)\bin\Debug\BITCOIN SIMULATOR(TAB).exe
+C:\Users\조훈희\Desktop\Files On Campus\조훈희\전북대\컴공 전공\윈도우 프로그래밍\Project\BitCoinSimulator-addTab\BitCoinSimulator-addTab\BITCOIN SIMULATOR(TAB)\BITCOIN SIMULATOR(TAB)\bin\Debug\BITCOIN SIMULATOR(TAB).pdb
+C:\Users\조훈희\Desktop\Files On Campus\조훈희\전북대\컴공 전공\윈도우 프로그래밍\Project\BitCoinSimulator-addTab\BitCoinSimulator-addTab\BITCOIN SIMULATOR(TAB)\BITCOIN SIMULATOR(TAB)\bin\Debug\Newtonsoft.Json.dll
+C:\Users\조훈희\Desktop\Files On Campus\조훈희\전북대\컴공 전공\윈도우 프로그래밍\Project\BitCoinSimulator-addTab\BitCoinSimulator-addTab\BITCOIN SIMULATOR(TAB)\BITCOIN SIMULATOR(TAB)\bin\Debug\Newtonsoft.Json.xml
+C:\Users\조훈희\Desktop\Files On Campus\조훈희\전북대\컴공 전공\윈도우 프로그래밍\Project\BitCoinSimulator-addTab\BitCoinSimulator-addTab\BITCOIN SIMULATOR(TAB)\BITCOIN SIMULATOR(TAB)\obj\Debug\View\Tutorial_Page_2.g.cs
+C:\Users\조훈희\Desktop\Files On Campus\조훈희\전북대\컴공 전공\윈도우 프로그래밍\Project\BitCoinSimulator-addTab\BitCoinSimulator-addTab\BITCOIN SIMULATOR(TAB)\BITCOIN SIMULATOR(TAB)\obj\Debug\View\Tutorial_Page_3.g.cs
+C:\Users\조훈희\Desktop\Files On Campus\조훈희\전북대\컴공 전공\윈도우 프로그래밍\Project\BitCoinSimulator-addTab\BitCoinSimulator-addTab\BITCOIN SIMULATOR(TAB)\BITCOIN SIMULATOR(TAB)\obj\Debug\View\SetNamePage.baml
+C:\Users\조훈희\Desktop\Files On Campus\조훈희\전북대\컴공 전공\윈도우 프로그래밍\Project\BitCoinSimulator-addTab\BitCoinSimulator-addTab\BITCOIN SIMULATOR(TAB)\BITCOIN SIMULATOR(TAB)\obj\Debug\View\TabWindow.baml
+C:\Users\조훈희\Desktop\Files On Campus\조훈희\전북대\컴공 전공\윈도우 프로그래밍\Project\BitCoinSimulator-addTab\BitCoinSimulator-addTab\BITCOIN SIMULATOR(TAB)\BITCOIN SIMULATOR(TAB)\obj\Debug\View\Start.baml
+C:\Users\조훈희\Desktop\Files On Campus\조훈희\전북대\컴공 전공\윈도우 프로그래밍\Project\BitCoinSimulator-addTab\BitCoinSimulator-addTab\BITCOIN SIMULATOR(TAB)\BITCOIN SIMULATOR(TAB)\obj\Debug\View\Tutorial_Page_1.baml
+C:\Users\조훈희\Desktop\Files On Campus\조훈희\전북대\컴공 전공\윈도우 프로그래밍\Project\BitCoinSimulator-addTab\BitCoinSimulator-addTab\BITCOIN SIMULATOR(TAB)\BITCOIN SIMULATOR(TAB)\obj\Debug\View\Tutorial_Page_2.baml
+C:\Users\조훈희\Desktop\Files On Campus\조훈희\전북대\컴공 전공\윈도우 프로그래밍\Project\BitCoinSimulator-addTab\BitCoinSimulator-addTab\BITCOIN SIMULATOR(TAB)\BITCOIN SIMULATOR(TAB)\obj\Debug\View\Tutorial_Page_3.baml
+C:\Users\조훈희\Desktop\Files On Campus\조훈희\전북대\컴공 전공\윈도우 프로그래밍\Project\BitCoinSimulator-addTab\BitCoinSimulator-addTab\BITCOIN SIMULATOR(TAB)\BITCOIN SIMULATOR(TAB)\obj\Debug\BITCOIN SIMULATOR(TAB).g.resources
+C:\Users\조훈희\Desktop\Files On Campus\조훈희\전북대\컴공 전공\윈도우 프로그래밍\Project\BitCoinSimulator-addTab\BitCoinSimulator-addTab\BITCOIN SIMULATOR(TAB)\BITCOIN SIMULATOR(TAB)\obj\Debug\BITCOIN_SIMULATOR_TAB_.Properties.Resources.resources
+C:\Users\조훈희\Desktop\Files On Campus\조훈희\전북대\컴공 전공\윈도우 프로그래밍\Project\BitCoinSimulator-addTab\BitCoinSimulator-addTab\BITCOIN SIMULATOR(TAB)\BITCOIN SIMULATOR(TAB)\obj\Debug\BITCOIN SIMULATOR(TAB).csproj.GenerateResource.cache
+C:\Users\조훈희\Desktop\Files On Campus\조훈희\전북대\컴공 전공\윈도우 프로그래밍\Project\BitCoinSimulator-addTab\BitCoinSimulator-addTab\BITCOIN SIMULATOR(TAB)\BITCOIN SIMULATOR(TAB)\obj\Debug\BITCOIN SIMULATOR(TAB).csproj.CoreCompileInputs.cache
+C:\Users\조훈희\Desktop\Files On Campus\조훈희\전북대\컴공 전공\윈도우 프로그래밍\Project\BitCoinSimulator-addTab\BitCoinSimulator-addTab\BITCOIN SIMULATOR(TAB)\BITCOIN SIMULATOR(TAB)\obj\Debug\BITCOIN SIMULATOR(TAB).csproj.CopyComplete
+C:\Users\조훈희\Desktop\Files On Campus\조훈희\전북대\컴공 전공\윈도우 프로그래밍\Project\BitCoinSimulator-addTab\BitCoinSimulator-addTab\BITCOIN SIMULATOR(TAB)\BITCOIN SIMULATOR(TAB)\obj\Debug\BITCOIN SIMULATOR(TAB).exe
+C:\Users\조훈희\Desktop\Files On Campus\조훈희\전북대\컴공 전공\윈도우 프로그래밍\Project\BitCoinSimulator-addTab\BitCoinSimulator-addTab\BITCOIN SIMULATOR(TAB)\BITCOIN SIMULATOR(TAB)\obj\Debug\BITCOIN SIMULATOR(TAB).pdb

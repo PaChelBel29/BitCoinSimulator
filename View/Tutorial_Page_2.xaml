@@ -1,0 +1,36 @@
+﻿<Page x:Class="BITCOIN_SIMULATOR_TAB_.View.Tutorial_Page_2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BITCOIN_SIMULATOR_TAB_.View"
+      xmlns:TEB="clr-namespace:BITCOIN_SIMULATOR_TAB_.ViewModel.UserControls"
+      xmlns:cmd="clr-namespace:BITCOIN_SIMULATOR_TAB_.ViewModel.Commands"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" d:DesignWidth="1024"
+      Title="Tutorial_Page">
+    <!--201911907 CSE Div. 조훈희-->
+    <Page.Resources>
+        <cmd:Page_2_To_3_Command x:Key="2to3"/>
+    </Page.Resources>
+    <Grid x:Name="tutorial_back">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/Scene2.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=" 4*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TEB:TypingEffectButton x:Name="Tutorial_Chat" 
+                   Grid.Row="1"
+                   Margin="15" Style="{StaticResource TutorialText}"
+                   Command="{Binding Source={StaticResource 2to3}}"
+                                HorizontalContentAlignment="Left"
+                   script="부익부 빈익빈... 세상은 내가 부자인 꼴을 보고싶지 않나봅니다.
+                           &#10;한강에 왔더니 문득 다 끝내버리고 싶은 충동이 생깁니다.
+                           &#10;그냥 다 끝내버리고 싶어졌습니다. 내 나이 24세...
+                           &#10;.....?"
+                   >
+        </TEB:TypingEffectButton>
+    </Grid>
+</Page>

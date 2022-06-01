@@ -1,0 +1,1090 @@
+﻿<Window x:Class="BITCOIN_SIMULATOR_TAB_.View.TabWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:dragablz="http://dragablz.net/winfx/xaml/dragablz"
+        xmlns:mycls="clr-namespace:BITCOIN_SIMULATOR_TAB_.Model"
+        xmlns:vm="clr-namespace:BITCOIN_SIMULATOR_TAB_.ViewModel"
+        xmlns:tabconverter="clr-namespace:BITCOIN_SIMULATOR_TAB_.ViewModel.Converters"
+        mc:Ignorable="d"
+        Title="BITCOIN SIMULATOR" Height="768" Width="1024"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <tabconverter:ChangeRateConverter x:Key="CRconv"/>
+        <tabconverter:MarketConverter x:Key="Mconv"/>
+        <tabconverter:PriceConverter x:Key="Pconv"/>
+        <tabconverter:CoinPriceConverter x:Key="CPconv"/>
+        <vm:UpbitVM x:Key="vm"/>
+        <vm:UserVM x:Key="usrvm"/>
+        <mycls:UserData x:Key="user"/>
+    </Window.Resources>
+
+
+        <mycls:TapGrid x:Name="myGrid" 
+                       aboutBackground="{Binding ElementName=TabCtrl, Path=SelectedItem}"
+                       DataContext="{StaticResource vm}">
+
+        <Border x:Name="myBorder" 
+                Padding="30"
+                Background="{StaticResource borCol}"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center">
+
+            <TabControl x:Name="TabCtrl"
+                        Height="600"
+                        Width="800"
+                        BorderBrush="Transparent"
+                        Background="{Binding ElementName=myGrid, Path=Background}">
+
+                <TabItem x:Name="Tab1"
+                         Header="현재 자산"
+                         Style="{StaticResource TabItemStyle}">
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Border Grid.Row="0" Grid.Column="0" 
+                                Grid.ColumnSpan="6" 
+                                Grid.RowSpan="5" 
+                                Background="#EEFFDD"/>
+
+                        <Border Grid.Row="5" Grid.Column="0" 
+                                Grid.ColumnSpan="6" 
+                                Grid.RowSpan="6" 
+                                Background="White"/>
+
+
+                        <Button Content="NEXT"
+                                VerticalAlignment="Bottom"
+                                Background="#FFECECEC"
+                                FontSize="20"
+                                Grid.Column="5"
+                                Grid.Row="10"
+                                Command="{Binding Path=NextCommand}"/>
+
+
+                        <TextBlock Text="내 보유자산"
+                                   FontSize="40"
+                                   Foreground="DarkSlateGray"
+                                   FontWeight="ExtraBold"
+                                   Margin="10 0 0 0"
+                                   Grid.Column="0"
+                                   Grid.ColumnSpan="2"/>
+
+                        <TextBlock Text="보유KRW"
+                                   FontSize="25"
+                                   Foreground="DarkSlateGray"
+                                   FontWeight="Normal"
+                                   Margin="10 10 0 0"
+                                   Grid.Row="1"
+                                   Grid.ColumnSpan="2"/>
+
+                        <TextBlock Text="{Binding Source={StaticResource usrvm}, Path=Usr.UserMoney, Converter={StaticResource Pconv}}"
+                                   FontSize="30"
+                                   Foreground="DarkSlateGray"
+                                   FontWeight="ExtraBold"
+                                   Margin="10 5 0 0"
+                                   Grid.Row="2"
+                                   Grid.ColumnSpan="2"/>
+
+                        <TextBlock Text="총매수"
+                                   FontSize="20"
+                                   Foreground="DarkSlateGray"
+                                   FontWeight="Normal"
+                                   Margin="10 10 0 0"
+                                   Grid.Row="3"
+                                   Grid.ColumnSpan="2"/>
+
+                        <TextBlock Text="총평가"
+                                   FontSize="20"
+                                   Foreground="DarkSlateGray"
+                                   FontWeight="Normal"
+                                   Margin="10 5 0 0"
+                                   Grid.Row="4"
+                                   Grid.ColumnSpan="2"/>
+
+                        <TextBlock Text="{Binding Source={StaticResource usrvm}, Path=Usr.TotalCoin, Converter={StaticResource Pconv}}"
+                                   FontSize="20"
+                                   Foreground="DarkSlateGray"
+                                   FontWeight="UltraBold"
+                                   HorizontalAlignment="Center"
+                                   Margin="10 10 0 0"
+                                   Grid.Row="3"
+                                   Grid.Column="2"/>
+
+                        <TextBlock Text="{Binding Source={StaticResource usrvm}, Path=Usr.PfCoin, Converter={StaticResource Pconv}}"
+                                   FontSize="20"
+                                   Foreground="DarkSlateGray"
+                                   FontWeight="UltraBold"
+                                   HorizontalAlignment="Center"
+                                   Margin="10 5 0 0"
+                                   Grid.Row="4"
+                                   Grid.Column="2"/>
+
+                        <TextBlock Text="총 보유자산"
+                                   FontSize="25"
+                                   Foreground="DarkSlateGray"
+                                   FontWeight="Normal"
+                                   Margin="10 10 0 0"
+                                   Grid.Row="1"
+                                   Grid.Column="3"
+                                   Grid.ColumnSpan="2"/>
+
+                        <TextBlock Text="{Binding Source={StaticResource usrvm}, Path=Usr.TotalMoney, Converter={StaticResource Pconv}}"
+                                   FontSize="30"
+                                   Foreground="DarkSlateGray"
+                                   FontWeight="ExtraBold"
+                                   Margin="10 5 0 0"
+                                   Grid.Row="2"
+                                   Grid.Column="3"
+                                   Grid.ColumnSpan="3"/>
+
+                        <TextBlock Text="평가손익"
+                                   FontSize="20"
+                                   Foreground="DarkSlateGray"
+                                   FontWeight="Normal"
+                                   Margin="10 10 0 0"
+                                   Grid.Row="3"
+                                   Grid.Column="3"/>
+
+                        <TextBlock Text="수익률"
+                                   FontSize="20"
+                                   Foreground="DarkSlateGray"
+                                   FontWeight="Normal"
+                                   Margin="10 5 0 0"
+                                   Grid.Row="4"
+                                   Grid.Column="3"/>
+
+                        <mycls:TabLabel x:Name="TL6" 
+                                        Content="{Binding Source={StaticResource usrvm}, Path=Usr.PfMoney, Converter={StaticResource Pconv}}"
+                                        RateProperty="{Binding ElementName=TL6,Path=Content}"
+                                        FontSize="20"
+                                        FontWeight="UltraBold"
+                                        HorizontalAlignment="Center"
+                                        Margin="10 2 0 0"
+                                        Grid.Row="3"
+                                        Grid.Column="5"/>
+
+                        <mycls:TabLabel x:Name="TL7" 
+                                        Content="{Binding Source={StaticResource usrvm}, Path=Usr.PfRate, Converter={StaticResource CRconv}}"
+                                        RateProperty="{Binding ElementName=TL7,Path=Content}"
+                                        FontSize="20"
+                                        FontWeight="UltraBold"
+                                        HorizontalAlignment="Center"
+                                        Margin="10 2 0 0"
+                                        Grid.Row="4"
+                                        Grid.Column="5"/>
+
+                        <StackPanel Margin="1" Grid.Column="0" Grid.Row="5" Grid.RowSpan="6" Background="White">
+                            <TextBlock Text="코인"
+                                       Background="#FFECECEC"
+                                       Padding="50 5"
+                                       Style="{StaticResource TextBlockStyle}"/>
+
+                            <Button Content="{Binding Path=UpbitDataToShow1.Market, Converter={StaticResource Mconv}}"
+                                    Style="{StaticResource ButtonStyle}"
+                                    Margin="0 10 0 0"/>
+                            <Button Content="{Binding Path=UpbitDataToShow2.Market, Converter={StaticResource Mconv}}"
+                                    Style="{StaticResource ButtonStyle}"
+                                    Margin="0 20 0 0"/>
+                            <Button Content="{Binding Path=UpbitDataToShow3.Market, Converter={StaticResource Mconv}}"
+                                    Style="{StaticResource ButtonStyle}"
+                                    Margin="0 20 0 0"/>
+                            <Button Content="{Binding Path=UpbitDataToShow4.Market, Converter={StaticResource Mconv}}"
+                                    Style="{StaticResource ButtonStyle}"
+                                    Margin="0 20 0 0"/>
+                            <Button Content="{Binding Path=UpbitDataToShow5.Market, Converter={StaticResource Mconv}}"
+                                    Style="{StaticResource ButtonStyle}"
+                                    Margin="0 20 0 0"/>
+
+                        </StackPanel>
+
+                        <StackPanel Margin="1" Grid.Column="1" Grid.Row="5" Grid.RowSpan="6" Background="White">
+                            <TextBlock Text="보유(평가금)"
+                                       Background="#FFECECEC"
+                                       Padding="26 5"
+                                       Style="{StaticResource TextBlockStyle}" />
+                            <Label Content="{Binding Source={StaticResource usrvm}, Path=Usr.Btc, Converter={StaticResource Pconv}}"
+                                            Foreground="DarkSlateGray"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 10 0 0"/>
+                            <Label Content="{Binding Source={StaticResource usrvm}, Path=Usr.Eth, Converter={StaticResource Pconv}}"
+                                            Foreground="DarkSlateGray"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 20 0 0"/>
+                            <Label Content="{Binding Source={StaticResource usrvm}, Path=Usr.Xrp, Converter={StaticResource Pconv}}"
+                                            Foreground="DarkSlateGray"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 20 0 0"/>
+                            <Label Content="{Binding Source={StaticResource usrvm}, Path=Usr.Dot, Converter={StaticResource Pconv}}"
+                                            Foreground="DarkSlateGray"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 20 0 0"/>
+                            <Label Content="{Binding Source={StaticResource usrvm}, Path=Usr.Doge, Converter={StaticResource Pconv}}"
+                                            Foreground="DarkSlateGray"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 20 0 0"/>
+                        </StackPanel>
+
+                        <StackPanel Margin="1" Grid.Column="2" Grid.Row="5" Grid.RowSpan="6" Background="White">
+                            <TextBlock Text="현재가(₩)"
+                                       Background="#FFECECEC"
+                                       Padding="38 5"
+                                       Style="{StaticResource TextBlockStyle}" />
+                            <mycls:TabLabel Content="{Binding Path=UpbitDataToShow1.Trade_price, Converter={StaticResource Pconv}}"
+                                            Foreground="{Binding ElementName=L1, Path=Foreground}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 10 0 0"/>
+                            <mycls:TabLabel Content="{Binding Path=UpbitDataToShow2.Trade_price, Converter={StaticResource Pconv}}"
+                                            Foreground="{Binding ElementName=L2, Path=Foreground}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 20 0 0"/>
+                            <mycls:TabLabel Content="{Binding Path=UpbitDataToShow3.Trade_price, Converter={StaticResource Pconv}}"
+                                            Foreground="{Binding ElementName=L3, Path=Foreground}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 20 0 0"/>
+                            <mycls:TabLabel Content="{Binding Path=UpbitDataToShow4.Trade_price, Converter={StaticResource Pconv}}"
+                                            Foreground="{Binding ElementName=L4, Path=Foreground}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 20 0 0"/>
+                            <mycls:TabLabel Content="{Binding Path=UpbitDataToShow5.Trade_price, Converter={StaticResource Pconv}}"
+                                            Foreground="{Binding ElementName=L5, Path=Foreground}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 20 0 0"/>
+                        </StackPanel>
+                        
+                        <StackPanel Margin="1" Grid.Column="3" Grid.Row="5" Grid.RowSpan="6" Background="White">
+                            <TextBlock Text="매수평균가"
+                                       Background="#FFECECEC"
+                                       Padding="30 5"
+                                       Style="{StaticResource TextBlockStyle}"/>
+                            <Label Content="{Binding Source={StaticResource usrvm}, Path=Usr.BtcPrice, Converter={StaticResource CPconv}}"
+                                   Foreground="DarkSlateGray"
+                                   FontSize="15"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"
+                                   Margin="0 10 0 0"/>
+                            <Label Content="{Binding Source={StaticResource usrvm}, Path=Usr.EthPrice, Converter={StaticResource CPconv}}"
+                                   Foreground="DarkSlateGray"
+                                   FontSize="15"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"
+                                   Margin="0 20 0 0"/>
+                            <Label Content="{Binding Source={StaticResource usrvm}, Path=Usr.XrpPrice, Converter={StaticResource CPconv}}"
+                                   Foreground="DarkSlateGray"
+                                   FontSize="15"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"
+                                   Margin="0 20 0 0"/>
+                            <Label Content="{Binding Source={StaticResource usrvm}, Path=Usr.DotPrice, Converter={StaticResource CPconv}}"
+                                   Foreground="DarkSlateGray"
+                                   FontSize="15"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"
+                                   Margin="0 20 0 0"/>
+                            <Label Content="{Binding Source={StaticResource usrvm}, Path=Usr.DogePrice, Converter={StaticResource CPconv}}"
+                                   Foreground="DarkSlateGray"
+                                   FontSize="15"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"
+                                   Margin="0 20 0 0"/>
+                        </StackPanel>
+
+                        <StackPanel Margin="1" Grid.Column="4" Grid.Row="5" Grid.RowSpan="6" Background="White">
+                            <TextBlock Text="수익률"
+                                       Background="#FFECECEC"
+                                       Padding="45 5"
+                                       Style="{StaticResource TextBlockStyle}"/>
+                            <mycls:TabLabel x:Name="TL1" 
+                                            Content="{Binding Source={StaticResource usrvm}, Path=Usr.BtcRate, Converter={StaticResource CRconv}}"
+                                            RateProperty="{Binding ElementName=TL1,Path=Content}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 10 0 0"/>
+                            <mycls:TabLabel x:Name="TL2"  
+                                            Content="{Binding Source={StaticResource usrvm}, Path=Usr.EthRate, Converter={StaticResource CRconv}}"
+                                            RateProperty="{Binding ElementName=TL2,Path=Content}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 20 0 0"/>
+                            <mycls:TabLabel x:Name="TL3" 
+                                            Content="{Binding Source={StaticResource usrvm}, Path=Usr.XrpRate, Converter={StaticResource CRconv}}"
+                                            RateProperty="{Binding ElementName=TL3,Path=Content}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 20 0 0"/>
+                            <mycls:TabLabel x:Name="TL4" 
+                                            Content="{Binding Source={StaticResource usrvm}, Path=Usr.DotRate, Converter={StaticResource CRconv}}"
+                                            RateProperty="{Binding ElementName=TL4,Path=Content}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 20 0 0"/>
+                            <mycls:TabLabel x:Name="TL5" 
+                                            Content="{Binding Source={StaticResource usrvm}, Path=Usr.DogeRate, Converter={StaticResource CRconv}}"
+                                            RateProperty="{Binding ElementName=TL5,Path=Content}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 20 0 0"/>
+                        </StackPanel>
+
+                    </Grid>
+
+                </TabItem>
+
+                <TabItem x:Name="Tab2" 
+                         Header="코인 시세" 
+                         Style="{StaticResource TabItemStyle}">
+                    
+                    
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+
+                        <Button Content="NEXT"
+                                VerticalAlignment="Bottom"
+                                Background="#FFECECEC"
+                                FontSize="20"
+                                Grid.Column="5"
+                                Command="{Binding Path=NextCommand}"/>
+
+                        <StackPanel Margin="1" Grid.Column="0" Background="White">
+                            <TextBlock Text="코인"
+                                       Background="#FFECECEC"
+                                       Padding="50 5"
+                                       Style="{StaticResource TextBlockStyle}"/>
+                            
+                            <Button Content="{Binding Path=UpbitDataToShow1.Market, Converter={StaticResource Mconv}}"
+                                             Style="{StaticResource ButtonStyle}"
+                                             Margin="0 7 0 0"/>
+                            <Button Content="{Binding Path=UpbitDataToShow2.Market, Converter={StaticResource Mconv}}"
+                                             Style="{StaticResource ButtonStyle}"/>
+                            <Button Content="{Binding Path=UpbitDataToShow3.Market, Converter={StaticResource Mconv}}"
+                                             Style="{StaticResource ButtonStyle}"/>
+                            <Button Content="{Binding Path=UpbitDataToShow4.Market, Converter={StaticResource Mconv}}"
+                                             Style="{StaticResource ButtonStyle}"/>
+                            <Button Content="{Binding Path=UpbitDataToShow5.Market, Converter={StaticResource Mconv}}"
+                                             Style="{StaticResource ButtonStyle}"/>
+                            
+                        </StackPanel>
+                                         
+
+                        <StackPanel Margin="1" Grid.Column="1" Background="White">
+                            <TextBlock Text="현재가(₩)"
+                                       Background="#FFECECEC"
+                                       Padding="38 5"
+                                       Style="{StaticResource TextBlockStyle}" />
+                            <mycls:TabLabel Content="{Binding Path=UpbitDataToShow1.Trade_price, Converter={StaticResource Pconv}}"
+                                            Foreground="{Binding ElementName=L1, Path=Foreground}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 5 0 0"/>
+                            <mycls:TabLabel Content="{Binding Path=UpbitDataToShow2.Trade_price, Converter={StaticResource Pconv}}"
+                                            Foreground="{Binding ElementName=L2, Path=Foreground}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 50 0 0"/>
+                            <mycls:TabLabel Content="{Binding Path=UpbitDataToShow3.Trade_price, Converter={StaticResource Pconv}}"
+                                            Foreground="{Binding ElementName=L3, Path=Foreground}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 50 0 0"/>
+                            <mycls:TabLabel Content="{Binding Path=UpbitDataToShow4.Trade_price, Converter={StaticResource Pconv}}"
+                                            Foreground="{Binding ElementName=L4, Path=Foreground}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 50 0 0"/>
+                            <mycls:TabLabel Content="{Binding Path=UpbitDataToShow5.Trade_price, Converter={StaticResource Pconv}}"
+                                            Foreground="{Binding ElementName=L5, Path=Foreground}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 50 0 0"/>
+                        </StackPanel>
+                        
+                        
+                        <StackPanel Margin="1" Grid.Column="2" Background="White">
+                            <TextBlock Text="전일대비"
+                                       Background="#FFECECEC"
+                                       Padding="40 5"
+                                       Style="{StaticResource TextBlockStyle}"/>
+                            <mycls:TabLabel x:Name="L1" 
+                                            Content="{Binding Path=UpbitDataToShow1.Change_rate, Converter={StaticResource CRconv}}"
+                                            RateProperty="{Binding ElementName=L1,Path=Content}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 5 0 0"/>
+                            <mycls:TabLabel x:Name="L2"  
+                                            Content="{Binding Path=UpbitDataToShow2.Change_rate, Converter={StaticResource CRconv}}"
+                                            RateProperty="{Binding ElementName=L2,Path=Content}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 50 0 0"/>
+                            <mycls:TabLabel x:Name="L3" 
+                                            Content="{Binding Path=UpbitDataToShow3.Change_rate, Converter={StaticResource CRconv}}"
+                                            RateProperty="{Binding ElementName=L3,Path=Content}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 50 0 0"/>
+                            <mycls:TabLabel x:Name="L4" 
+                                            Content="{Binding Path=UpbitDataToShow4.Change_rate, Converter={StaticResource CRconv}}"
+                                            RateProperty="{Binding ElementName=L4,Path=Content}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 50 0 0"/>
+                            <mycls:TabLabel x:Name="L5" 
+                                            Content="{Binding Path=UpbitDataToShow5.Change_rate, Converter={StaticResource CRconv}}"
+                                            RateProperty="{Binding ElementName=L5,Path=Content}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 50 0 0"/>
+                        </StackPanel>
+                        
+                        
+                    </Grid>
+                    
+                </TabItem>
+
+                <TabItem x:Name="Tab3" 
+                         Header="코인 매매" 
+                         Style="{StaticResource TabItemStyle}">
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <TabControl Grid.Column="3" Grid.ColumnSpan="3" 
+                                    Height="400" VerticalAlignment="Top"
+                                    BorderBrush="Transparent" Margin="10 0">
+                            
+                            <TabItem Header="매수"
+                                     Style="{StaticResource TabItemStyle2}">
+                                
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Text="코인명"
+                                               FontSize="25"
+                                               FontWeight="UltraBold"
+                                               Foreground="DarkSlateGray"
+                                               Grid.Column="0"
+                                               Grid.ColumnSpan="2"
+                                               Margin="20 20 0 0"/>
+
+                                    <TextBlock Text="현재가"
+                                               FontSize="25"
+                                               FontWeight="UltraBold"
+                                               Foreground="DarkSlateGray"
+                                               Grid.Column="0"
+                                               Grid.Row="1"
+                                               Grid.ColumnSpan="2"
+                                               Margin="20 20 0 0"/>
+                                    
+                                    <TextBlock Text="주문 가능"
+                                               FontSize="25"
+                                               FontWeight="UltraBold"
+                                               Foreground="DarkSlateGray"
+                                               Grid.Column="0"
+                                               Grid.Row="2"
+                                               Grid.ColumnSpan="2"
+                                               Margin="20 20 0 0"/>
+
+                                    <TextBlock Text="주문 총액"
+                                               FontSize="25"
+                                               FontWeight="UltraBold"
+                                               Foreground="DarkSlateGray"
+                                               Grid.Column="0"
+                                               Grid.Row="3"
+                                               Grid.ColumnSpan="2"
+                                               Margin="20 20 0 0"/>
+
+                                    <TextBlock Text="{Binding Path=SelectedData.Market, Converter={StaticResource Mconv}}"
+                                               FontSize="20"
+                                               FontStyle="Italic"
+                                               FontWeight="UltraBold"
+                                               Foreground="Black"
+                                               Grid.Column="2"
+                                               Grid.ColumnSpan="3"
+                                               Margin="20 25 0 0"/>
+
+                                    <TextBlock Text="{Binding Path=SelectedData.Trade_price, Converter={StaticResource Pconv}}"
+                                               FontSize="20"
+                                               FontStyle="Italic"
+                                               FontWeight="UltraBold"
+                                               Foreground="Gray"
+                                               Grid.Column="2"
+                                               Grid.Row="1"
+                                               Grid.ColumnSpan="3"
+                                               Margin="20 20 0 0"/>
+
+                                    <TextBlock Text="{Binding Source={StaticResource usrvm}, Path=Usr.UserMoney, Converter={StaticResource Pconv}}"
+                                               FontSize="20"
+                                               FontStyle="Italic"
+                                               FontWeight="UltraBold"
+                                               Foreground="Gray"
+                                               Grid.Column="2"
+                                               Grid.Row="2"
+                                               Grid.ColumnSpan="3"
+                                               Margin="20 20 0 0"/>
+
+                                    <TextBox x:Name="txtBox1" 
+                                             Text="₩"
+                                             FontSize="20"
+                                             FontStyle="Italic"
+                                             FontWeight="UltraBold"
+                                             Foreground="Gray"
+                                             Grid.Column="2"
+                                             Grid.Row="3"
+                                             Grid.ColumnSpan="3"
+                                             Margin="20 20 10 10"/>
+
+                                    <Button Content="매수하기"
+                                            Grid.Column="2"
+                                            Grid.ColumnSpan="3"
+                                            Grid.Row="4"
+                                            Background="Firebrick"
+                                            BorderBrush="Transparent"
+                                            Foreground="White"
+                                            FontSize="25"
+                                            FontWeight="UltraBold"
+                                            Margin="10"
+                                            Command="{Binding Source={StaticResource usrvm},Path=buyCom}"
+                                            CommandParameter="{Binding ElementName=txtBox1}"/>
+                                </Grid>
+                            </TabItem>
+
+                            <TabItem Header="매도"
+                                     Style="{StaticResource TabItemStyle2}">
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Text="코인명"
+                                               FontSize="25"
+                                               FontWeight="UltraBold"
+                                               Foreground="DarkSlateGray"
+                                               Grid.Column="0"
+                                               Grid.ColumnSpan="2"
+                                               Margin="20 20 0 0"/>
+
+                                    <TextBlock Text="현재가"
+                                               FontSize="25"
+                                               FontWeight="UltraBold"
+                                               Foreground="DarkSlateGray"
+                                               Grid.Column="0"
+                                               Grid.Row="1"
+                                               Grid.ColumnSpan="2"
+                                               Margin="20 20 0 0"/>
+
+                                    <TextBlock Text="보유 코인"
+                                               FontSize="25"
+                                               FontWeight="UltraBold"
+                                               Foreground="DarkSlateGray"
+                                               Grid.Column="0"
+                                               Grid.Row="2"
+                                               Grid.ColumnSpan="2"
+                                               Margin="20 20 0 0"/>
+
+                                    <TextBlock Text="주문 총액"
+                                               FontSize="25"
+                                               FontWeight="UltraBold"
+                                               Foreground="DarkSlateGray"
+                                               Grid.Column="0"
+                                               Grid.Row="3"
+                                               Grid.ColumnSpan="2"
+                                               Margin="20 20 0 0"/>
+
+                                    <TextBlock Text="{Binding Path=SelectedData.Market, Converter={StaticResource Mconv}}"
+                                               FontSize="20"
+                                               FontStyle="Italic"
+                                               FontWeight="UltraBold"
+                                               Foreground="Black"
+                                               Grid.Column="2"
+                                               Grid.ColumnSpan="3"
+                                               Margin="20 25 0 0"/>
+
+                                    <TextBlock Text="{Binding Path=SelectedData.Trade_price, Converter={StaticResource Pconv}}"
+                                               FontSize="20"
+                                               FontStyle="Italic"
+                                               FontWeight="UltraBold"
+                                               Foreground="Gray"
+                                               Grid.Column="2"
+                                               Grid.Row="1"
+                                               Grid.ColumnSpan="3"
+                                               Margin="20 20 0 0"/>
+
+                                    <TextBlock Text="{Binding Source={StaticResource usrvm}, Path=Usr.UserCoin, Converter={StaticResource Pconv}}"
+                                               FontStyle="Italic"
+                                               FontWeight="UltraBold"
+                                               Foreground="Gray"
+                                               Grid.Column="2"
+                                               Grid.Row="2"
+                                               Grid.ColumnSpan="3"
+                                               Margin="20 20 0 0"/>
+
+                                    <TextBox x:Name="txtBox2" 
+                                             Text="₩"
+                                             FontSize="20"
+                                             FontStyle="Italic"
+                                             FontWeight="UltraBold"
+                                             Foreground="Gray"
+                                             Grid.Column="2"
+                                             Grid.Row="3"
+                                             Grid.ColumnSpan="3"
+                                             Margin="20 20 10 10"/>
+
+                                    <Button Content="매도하기"
+                                            Grid.Column="2"
+                                            Grid.ColumnSpan="3"
+                                            Grid.Row="4"
+                                            Background="SteelBlue"
+                                            BorderBrush="Transparent"
+                                            Foreground="White"
+                                            FontSize="25"
+                                            FontWeight="UltraBold"
+                                            Margin="10"
+                                            Command="{Binding Source={StaticResource usrvm},Path=sellCom, UpdateSourceTrigger=PropertyChanged}"
+                                            CommandParameter="{Binding ElementName=txtBox2}"/>
+                                </Grid>
+
+                            </TabItem>
+                            
+                        </TabControl>
+
+                        <Button Content="NEXT"
+                                VerticalAlignment="Bottom"
+                                Background="#FFECECEC"
+                                FontSize="20"
+                                Grid.Column="5"
+                                Command="{Binding Path=NextCommand}"/>
+
+                        <StackPanel Margin="1" Grid.Column="0" Background="White">
+                            <TextBlock Text="코인"
+                                       Background="#FFECECEC"
+                                       Padding="50 5"
+                                       Style="{StaticResource TextBlockStyle}"/>
+
+                            <Button x:Name="btn1" 
+                                    Content="{Binding Path=UpbitDataToShow1.Market, Converter={StaticResource Mconv}}"
+                                    Style="{StaticResource ButtonStyle}"
+                                    Command="{Binding Path=MarketCommand}"
+                                    CommandParameter="{Binding ElementName=btn1}"
+                                    Margin="0 7 0 0"/>
+                            <Button x:Name="btn2" 
+                                    Content="{Binding Path=UpbitDataToShow2.Market, Converter={StaticResource Mconv}}"
+                                    Style="{StaticResource ButtonStyle}"
+                                    Command="{Binding Path=MarketCommand}"
+                                    CommandParameter="{Binding ElementName=btn2}"/>
+                            <Button x:Name="btn3" 
+                                    Content="{Binding Path=UpbitDataToShow3.Market, Converter={StaticResource Mconv}}"
+                                    Style="{StaticResource ButtonStyle}"
+                                    Command="{Binding Path=MarketCommand}"
+                                    CommandParameter="{Binding ElementName=btn3}"/>
+                            <Button x:Name="btn4" 
+                                    Content="{Binding Path=UpbitDataToShow4.Market, Converter={StaticResource Mconv}}"
+                                    Style="{StaticResource ButtonStyle}"
+                                    Command="{Binding Path=MarketCommand}"
+                                    CommandParameter="{Binding ElementName=btn4}"/>
+                            <Button x:Name="btn5"  
+                                    Content="{Binding Path=UpbitDataToShow5.Market, Converter={StaticResource Mconv}}"
+                                    Style="{StaticResource ButtonStyle}"
+                                    Command="{Binding Path=MarketCommand}"
+                                    CommandParameter="{Binding ElementName=btn5}"/>
+
+                        </StackPanel>
+
+
+                        <StackPanel Margin="1" Grid.Column="1" Background="White">
+                            <TextBlock Text="현재가(₩)"
+                                       Background="#FFECECEC"
+                                       Padding="38 5"
+                                       Style="{StaticResource TextBlockStyle}" />
+                            <mycls:TabLabel Content="{Binding Path=UpbitDataToShow1.Trade_price, Converter={StaticResource Pconv}}"
+                                            Foreground="{Binding ElementName=Lab1, Path=Foreground}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 5 0 0"/>
+                            <mycls:TabLabel Content="{Binding Path=UpbitDataToShow2.Trade_price, Converter={StaticResource Pconv}}"
+                                            Foreground="{Binding ElementName=Lab2, Path=Foreground}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 50 0 0"/>
+                            <mycls:TabLabel Content="{Binding Path=UpbitDataToShow3.Trade_price, Converter={StaticResource Pconv}}"
+                                            Foreground="{Binding ElementName=Lab3, Path=Foreground}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 50 0 0"/>
+                            <mycls:TabLabel Content="{Binding Path=UpbitDataToShow4.Trade_price, Converter={StaticResource Pconv}}"
+                                            Foreground="{Binding ElementName=Lab4, Path=Foreground}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 50 0 0"/>
+                            <mycls:TabLabel Content="{Binding Path=UpbitDataToShow5.Trade_price, Converter={StaticResource Pconv}}"
+                                            Foreground="{Binding ElementName=Lab5, Path=Foreground}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 50 0 0"/>
+                        </StackPanel>
+
+
+                        <StackPanel Margin="1" Grid.Column="2" Background="White">
+                            <TextBlock Text="전일대비"
+                                       Background="#FFECECEC"
+                                       Padding="40 5"
+                                       Style="{StaticResource TextBlockStyle}"/>
+                            <mycls:TabLabel x:Name="Lab1" 
+                                            Content="{Binding Path=UpbitDataToShow1.Change_rate, Converter={StaticResource CRconv}}"
+                                            RateProperty="{Binding ElementName=Lab1,Path=Content}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 5 0 0"/>
+                            <mycls:TabLabel x:Name="Lab2"  
+                                            Content="{Binding Path=UpbitDataToShow2.Change_rate, Converter={StaticResource CRconv}}"
+                                            RateProperty="{Binding ElementName=Lab2,Path=Content}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 50 0 0"/>
+                            <mycls:TabLabel x:Name="Lab3" 
+                                            Content="{Binding Path=UpbitDataToShow3.Change_rate, Converter={StaticResource CRconv}}"
+                                            RateProperty="{Binding ElementName=Lab3,Path=Content}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 50 0 0"/>
+                            <mycls:TabLabel x:Name="Lab4" 
+                                            Content="{Binding Path=UpbitDataToShow4.Change_rate, Converter={StaticResource CRconv}}"
+                                            RateProperty="{Binding ElementName=Lab4,Path=Content}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 50 0 0"/>
+                            <mycls:TabLabel x:Name="Lab5" 
+                                            Content="{Binding Path=UpbitDataToShow5.Change_rate, Converter={StaticResource CRconv}}"
+                                            RateProperty="{Binding ElementName=Lab5,Path=Content}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 50 0 0"/>
+                        </StackPanel>
+
+                    </Grid>
+
+                </TabItem>
+
+                <TabItem x:Name="Tab4" 
+                         Header="보유 코인" 
+                         Style="{StaticResource TabItemStyle}">
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Margin="1" Grid.Column="0" Background="White">
+                            <TextBlock Text="코인"
+                                       Background="#FFECECEC"
+                                       Padding="65 5"
+                                       Style="{StaticResource TextBlockStyle}"/>
+
+                            <Button Content="{Binding Path=UpbitDataToShow1.Market, Converter={StaticResource Mconv}}"
+                                    Style="{StaticResource ButtonStyle}"
+                                    Margin="0 40 0 0"/>
+                            <Button Content="{Binding Path=UpbitDataToShow2.Market, Converter={StaticResource Mconv}}"
+                                    Style="{StaticResource ButtonStyle}"
+                                    Margin="0 50 0 0"/>
+                            <Button Content="{Binding Path=UpbitDataToShow3.Market, Converter={StaticResource Mconv}}"
+                                    Style="{StaticResource ButtonStyle}"
+                                    Margin="0 50 0 0"/>
+                            <Button Content="{Binding Path=UpbitDataToShow4.Market, Converter={StaticResource Mconv}}"
+                                    Style="{StaticResource ButtonStyle}"
+                                    Margin="0 50 0 0"/>
+                            <Button Content="{Binding Path=UpbitDataToShow5.Market, Converter={StaticResource Mconv}}"
+                                    Style="{StaticResource ButtonStyle}"
+                                    Margin="0 50 0 0"/>
+
+                        </StackPanel>
+
+                        <StackPanel Margin="1" Grid.Column="1" Background="White">
+                            <TextBlock Text="보유(평가금)"
+                                       Background="#FFECECEC"
+                                       Padding="40 5"
+                                       Style="{StaticResource TextBlockStyle}" />
+                            <Label Content="{Binding Source={StaticResource usrvm}, Path=Usr.Btc, Converter={StaticResource Pconv}}"
+                                            Foreground="DarkSlateGray"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 40 0 0"/>
+                            <Label Content="{Binding Source={StaticResource usrvm}, Path=Usr.Eth, Converter={StaticResource Pconv}}"
+                                            Foreground="DarkSlateGray"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 50 0 0"/>
+                            <Label Content="{Binding Source={StaticResource usrvm}, Path=Usr.Xrp, Converter={StaticResource Pconv}}"
+                                            Foreground="DarkSlateGray"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 50 0 0"/>
+                            <Label Content="{Binding Source={StaticResource usrvm}, Path=Usr.Dot, Converter={StaticResource Pconv}}"
+                                            Foreground="DarkSlateGray"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 50 0 0"/>
+                            <Label Content="{Binding Source={StaticResource usrvm}, Path=Usr.Doge, Converter={StaticResource Pconv}}"
+                                            Foreground="DarkSlateGray"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 50 0 0"/>
+                        </StackPanel>
+
+                        <StackPanel Margin="1" Grid.Column="2" Background="White">
+                            <TextBlock Text="현재가(₩)"
+                                       Background="#FFECECEC"
+                                       Padding="48 5"
+                                       Style="{StaticResource TextBlockStyle}" />
+                            <mycls:TabLabel Content="{Binding Path=UpbitDataToShow1.Trade_price, Converter={StaticResource Pconv}}"
+                                            Foreground="{Binding ElementName=Lab1, Path=Foreground}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 40 0 0"/>
+                            <mycls:TabLabel Content="{Binding Path=UpbitDataToShow2.Trade_price, Converter={StaticResource Pconv}}"
+                                            Foreground="{Binding ElementName=Lab2, Path=Foreground}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 50 0 0"/>
+                            <mycls:TabLabel Content="{Binding Path=UpbitDataToShow3.Trade_price, Converter={StaticResource Pconv}}"
+                                            Foreground="{Binding ElementName=Lab3, Path=Foreground}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 50 0 0"/>
+                            <mycls:TabLabel Content="{Binding Path=UpbitDataToShow4.Trade_price, Converter={StaticResource Pconv}}"
+                                            Foreground="{Binding ElementName=Lab4, Path=Foreground}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 50 0 0"/>
+                            <mycls:TabLabel Content="{Binding Path=UpbitDataToShow5.Trade_price, Converter={StaticResource Pconv}}"
+                                            Foreground="{Binding ElementName=Lab5, Path=Foreground}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 50 0 0"/>
+                        </StackPanel>
+                        
+                        <StackPanel Margin="1" Grid.Column="3" Background="White">
+                            <TextBlock Text="매수평균가"
+                                       Background="#FFECECEC"
+                                       Padding="45 5"
+                                       Style="{StaticResource TextBlockStyle}"/>
+                            <Label Content="{Binding Source={StaticResource usrvm}, Path=Usr.BtcPrice, Converter={StaticResource CPconv}}"
+                                   Foreground="DarkSlateGray"
+                                   FontSize="15"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"
+                                   Margin="0 40 0 0"/>
+                            <Label Content="{Binding Source={StaticResource usrvm}, Path=Usr.EthPrice, Converter={StaticResource CPconv}}"
+                                   Foreground="DarkSlateGray"
+                                   FontSize="15"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"
+                                   Margin="0 50 0 0"/>
+                            <Label Content="{Binding Source={StaticResource usrvm}, Path=Usr.XrpPrice, Converter={StaticResource CPconv}}"
+                                   Foreground="DarkSlateGray"
+                                   FontSize="15"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"
+                                   Margin="0 50 0 0"/>
+                            <Label Content="{Binding Source={StaticResource usrvm}, Path=Usr.DotPrice, Converter={StaticResource CPconv}}"
+                                   Foreground="DarkSlateGray"
+                                   FontSize="15"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"
+                                   Margin="0 50 0 0"/>
+                            <Label Content="{Binding Source={StaticResource usrvm}, Path=Usr.DogePrice, Converter={StaticResource CPconv}}"
+                                   Foreground="DarkSlateGray"
+                                   FontSize="15"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"
+                                   Margin="0 50 0 0"/>
+                        </StackPanel>
+
+                        <StackPanel Margin="1" Grid.Column="4" Background="White">
+                            <TextBlock Text="수익률"
+                                       Background="#FFECECEC"
+                                       Padding="58 5"
+                                       Style="{StaticResource TextBlockStyle}"/>
+                            <mycls:TabLabel x:Name="TL8" 
+                                            Content="{Binding Source={StaticResource usrvm}, Path=Usr.BtcRate, Converter={StaticResource CRconv}}"
+                                            RateProperty="{Binding ElementName=TL8,Path=Content}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 40 0 0"/>
+                            <mycls:TabLabel x:Name="TL9" 
+                                            Content="{Binding Source={StaticResource usrvm}, Path=Usr.EthRate, Converter={StaticResource CRconv}}"
+                                            RateProperty="{Binding ElementName=TL9,Path=Content}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 50 0 0"/>
+                            <mycls:TabLabel x:Name="TL10"  
+                                            Content="{Binding Source={StaticResource usrvm}, Path=Usr.XrpRate, Converter={StaticResource CRconv}}"
+                                            RateProperty="{Binding ElementName=TL10,Path=Content}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 50 0 0"/>
+                            <mycls:TabLabel x:Name="TL11" 
+                                            Content="{Binding Source={StaticResource usrvm}, Path=Usr.DotRate, Converter={StaticResource CRconv}}"
+                                            RateProperty="{Binding ElementName=TL11,Path=Content}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 50 0 0"/>
+                            <mycls:TabLabel x:Name="TL12" 
+                                            Content="{Binding Source={StaticResource usrvm}, Path=Usr.DogeRate, Converter={StaticResource CRconv}}"
+                                            RateProperty="{Binding ElementName=TL12,Path=Content}"
+                                            FontSize="15"
+                                            FontWeight="Bold"
+                                            HorizontalAlignment="Center"
+                                            Margin="0 50 0 0"/>
+                        </StackPanel>
+
+                        <Button Content="NEXT"
+                                VerticalAlignment="Bottom"
+                                HorizontalAlignment="Right"
+                                Background="#FFECECEC"
+                                Width="133"
+                                FontSize="20"
+                                Grid.Column="5"
+                                Command="{Binding Path=NextCommand}"/>
+
+                    </Grid>
+
+                </TabItem>
+
+                <TabItem x:Name="Tab5" 
+                         Header="옵션" 
+                         Style="{StaticResource TabItemStyle}">
+
+                </TabItem>
+
+            </TabControl>
+
+        </Border>
+
+    </mycls:TapGrid>
+</Window>
+
+
